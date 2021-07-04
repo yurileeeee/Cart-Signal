@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".ScoreActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+            android:id="@+id/moreInfo_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="호스트와의 거래는 어떠셨나요?"
+            android:textSize="20sp"
+            android:paddingBottom="10sp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/score_profile"
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:layout_marginTop="25sp"
+                android:background="@drawable/profile_pic" />
+
+            <TextView
+                android:id="@+id/score_host_name"
+                android:layout_width="80sp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/score_profile"
+                android:text="이름"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:paddingTop="5sp"/>
+
+            <LinearLayout
+                android:id="@+id/score_ll_star"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/score_profile"
+                android:orientation="vertical"
+                android:padding="10sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/score_total_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="9sp"
+                        android:paddingRight="38sp"
+                        android:text="총점: "
+                        android:textSize="15sp" />
+
+                    <RatingBar
+                        android:id="@+id/score_total_star"
+                        style="?android:attr/ratingBarStyleIndicator"
+                        android:isIndicator="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:numStars="5"
+                        android:rating="3"
+                        android:stepSize="0.5"
+                        android:progressTint="#FFC107"
+                        android:progressBackgroundTint="#FFC107"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/score_time_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="9sp"
+                        android:paddingRight="10sp"
+                        android:text="응답시간: "
+                        android:textSize="15sp" />
+
+                    <RatingBar
+                        android:id="@+id/score_time_star"
+                        style="?android:attr/ratingBarStyleIndicator"
+                        android:isIndicator="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:numStars="5"
+                        android:rating="3"
+                        android:stepSize="0.5"
+                        android:progressTint="#FFC107"
+                        android:progressBackgroundTint="#FFC107"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/score_trust_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="9sp"
+                        android:paddingRight="24sp"
+                        android:text="신뢰도: "
+                        android:textSize="15sp" />
+
+                    <RatingBar
+                        android:id="@+id/score_trust_star"
+                        style="?android:attr/ratingBarStyleIndicator"
+                        android:isIndicator="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:numStars="5"
+                        android:rating="3"
+                        android:stepSize="0.5"
+                        android:progressTint="#FFC107"
+                        android:progressBackgroundTint="#FFC107"/>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/score_ll_star"
+                android:padding="10sp">
+
+                <TextView
+                    android:id="@+id/score_review_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="한줄평"
+                    android:textSize="15sp"
+                    android:paddingRight="10sp"/>
+
+                <EditText
+                    android:id="@+id/score_review_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:privateImeOptions="defaultInputmode=korean"
+                    android:hint="호스트에 대한 후기를 작성해주세요."/>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/score_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="제출" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
